@@ -1,0 +1,30 @@
+<div class="example-container">  
+    <h1>Widgets</h1>
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="widgets"
+      [cdkDropListConnectedTo]="[doneList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div cdkDrag *ngFor="let item of widgets; trackBy: trackByFn">
+        <app-widget [item]="item"></app-widget>
+        </div>
+    </div>
+  </div>
+  
+  <div class="example-container">  
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="workflow"
+      [cdkDropListConnectedTo]="[todoList]"
+      class="example-list-horizontal"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div cdkDrag *ngFor="let item of workflow; trackBy: trackByFn">
+        <app-widget [item]="item"></app-widget>
+        </div>
+    </div>
+  </div>
