@@ -20,7 +20,7 @@
       #doneList="cdkDropList"
       [cdkDropListData]="workflow"
       [cdkDropListConnectedTo]="[todoList]"
-      class="example-list-horizontal"
+      class="example-list"
       (cdkDropListDropped)="drop($event)"
     >
       <div cdkDrag *ngFor="let item of workflow; trackBy: trackByFn">

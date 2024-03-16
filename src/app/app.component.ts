@@ -1,9 +1,4 @@
-import {Component} from '@angular/core';
-import {
-  CdkDragDrop,
-  moveItemInArray,
-  transferArrayItem,
-} from '@angular/cdk/drag-drop';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 /**
  * @title Drag&Drop connected sorting
@@ -12,6 +7,7 @@ import {
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
 
