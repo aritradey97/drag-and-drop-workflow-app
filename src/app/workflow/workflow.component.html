@@ -1,4 +1,5 @@
-<div class="example-container">  
+<div class="parent-container">
+  <div class="example-container">  
     <h1>Widgets</h1>
     <div
       cdkDropList
@@ -14,17 +15,21 @@
     </div>
   </div>
   
-  <div class="example-container">  
-    <div
-      cdkDropList
-      #doneList="cdkDropList"
-      [cdkDropListData]="workflow"
-      [cdkDropListConnectedTo]="[todoList]"
-      class="example-list"
-      (cdkDropListDropped)="drop($event)"
-    >
-      <div cdkDrag *ngFor="let item of workflow; trackBy: trackByFn">
-        <app-widget [item]="item"></app-widget>
-        </div>
+  <div class="workflow-container"> 
+    <div class="example-container">  
+      <div
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="workflow"
+        [cdkDropListConnectedTo]="[todoList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div cdkDrag *ngFor="let item of workflow; trackBy: trackByFn">
+          <app-widget [item]="item"></app-widget>
+          </div>
+      </div>
     </div>
+    <button [disabled]="workflow.length === 0" class="mat-button" (click)="saveWorkflow()">Save workflow</button>
   </div>
+</div>
