@@ -1,13 +1,13 @@
 .example-box {
     padding: 20px 10px;
     border-bottom: solid 1px #ccc;
-    color: rgba(0, 0, 0, 0.87);
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     box-sizing: border-box;
     cursor: move;
-    background: white;
+    background: #3f5efb;
     font-size: 14px;
   }

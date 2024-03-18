@@ -1,19 +1,21 @@
 <div class="parent-container">
-  <div class="example-container">  
-    <h1>Widgets</h1>
-    <div
-      cdkDropList
-      #todoList="cdkDropList"
-      [cdkDropListData]="widgets"
-      [cdkDropListConnectedTo]="[doneList]"
-      class="example-list"
-      (cdkDropListDropped)="drop($event)"
-    >
-      <div cdkDrag *ngFor="let item of widgets; trackBy: trackByFn">
-        <app-widget [item]="item"></app-widget>
-        </div>
+  <aside>
+    <div class="example-container">  
+      <h1>Widgets</h1>
+      <div
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="widgets"
+        [cdkDropListConnectedTo]="[doneList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div cdkDrag *ngFor="let item of widgets; trackBy: trackByFn">
+          <app-widget [item]="item"></app-widget>
+          </div>
+      </div>
     </div>
-  </div>
+  </aside>
   
   <div class="workflow-container"> 
     <div class="example-container">  
@@ -22,7 +24,7 @@
         #doneList="cdkDropList"
         [cdkDropListData]="workflow"
         [cdkDropListConnectedTo]="[todoList]"
-        class="example-list"
+        class="example-list-workflow"
         (cdkDropListDropped)="drop($event)"
       >
         <div cdkDrag *ngFor="let item of workflow; trackBy: trackByFn">
