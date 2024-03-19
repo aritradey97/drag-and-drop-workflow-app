@@ -6,7 +6,15 @@ import { Observable, of } from 'rxjs';
 })
 export class WorkflowService {
 
-  private readonly widgets: string[] = ['Restart device', 'Provision FTD', 'Optimise Policies', 'Integrate on-prem FMC', 'Policy-update from Webex'];
+  private readonly widgets: string[] = ['Restart device', 
+    'Provision FTD', 
+    'Optimise Policies', 
+    'Integrate on-prem FMC', 
+    'Policy-update from Webex', 
+    'Create cluster', 
+    'Add device to cluster',
+    'Update threat signature',
+  ];
 
   constructor() { }
 
